@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+  xmlns="http://purl.org/rss/1.0/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:syn="http://purl.org/rss/1.0/modules/syndication/"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+>
+  <channel rdf:about="https://zhangyoufu.github.io/lwn/rss.rdf">
+    <title>LWN.net</title>
+    <link>https://lwn.net</link>
+    <description>
+      LWN.net is a comprehensive source of news and opinions from
+      and about the Linux community. This is the main LWN.net feed,
+      listing all articles which are posted to the site front page.
+    </description>
+    <syn:updatePeriod>hourly</syn:updatePeriod>
+    <syn:updateFrequency>6</syn:updateFrequency>
+    <atom:link rel="self" href="https://zhangyoufu.github.io/lwn/rss.rdf" />
+    <atom:link rel="hub" href="https://pubsubhubbub.appspot.com/" />
+    <items>
+      <rdf:Seq>
+        <rdf:li resource="https://lwn.net/Articles/896872/rss" />
+        <rdf:li resource="https://lwn.net/Articles/896896/rss" />
+        <rdf:li resource="https://lwn.net/Articles/895776/rss" />
+        <rdf:li resource="https://lwn.net/Articles/896153/rss" />
+        <rdf:li resource="https://lwn.net/Articles/896055/rss" />
+        <rdf:li resource="https://lwn.net/Articles/895907/rss" />
+        <rdf:li resource="https://lwn.net/Articles/895587/rss" />
+        <rdf:li resource="https://lwn.net/Articles/895800/rss" />
+        <rdf:li resource="https://lwn.net/Articles/895453/rss" />
+        <rdf:li resource="https://lwn.net/Articles/895540/rss" />
+        <rdf:li resource="https://lwn.net/Articles/895439/rss" />
+        <rdf:li resource="https://lwn.net/Articles/895431/rss" />
+        <rdf:li resource="https://lwn.net/Articles/894626/rss" />
+        <rdf:li resource="https://lwn.net/Articles/896804/rss" />
+        <rdf:li resource="https://lwn.net/Articles/896803/rss" />
+        <rdf:li resource="https://lwn.net/Articles/896721/rss" />
+        <rdf:li resource="https://lwn.net/Articles/896643/rss" />
+        <rdf:li resource="https://lwn.net/Articles/896644/rss" />
+        <rdf:li resource="https://lwn.net/Articles/896640/rss" />
+        <rdf:li resource="https://lwn.net/Articles/896511/rss" />
+      </rdf:Seq>
+    </items>
+  </channel>
+    <item rdf:about="https://lwn.net/Articles/896872/">
+      <title>Mazzoli: How fast are Linux pipes anyway?</title>
+      <link>https://lwn.net/Articles/896872/</link>
+      <dc:date>2022-06-02T13:35:15+00:00</dc:date>
+      <dc:creator>corbet</dc:creator>
+      <description>
+      Francesco Mazzoli &lt;a href=&quot;https://mazzo.li/posts/fast-pipes.html&quot;&gt;delves
+deeply into the kernel's implementation of pipes&lt;/a&gt; (and more) in an
+attempt to maximize the throughput of data.
+&lt;p&gt;
+&lt;blockquote class=&quot;bq&quot;&gt;
+	The post was inspired by reading a highly optimized FizzBuzz
+	program, which pushes output to a pipe at a rate of ~35GiB/s on my
+	laptop. Our first goal will be to match that speed, explaining
+	every step as we go along. We’ll also add an additional
+	performance-improving measure, which is not needed in FizzBuzz
+	since the bottleneck is actually computing the output, not IO, at
+	least on my machine.
+&lt;/blockquote&gt;
+      
+      </description>
+    </item>
+    <item rdf:about="https://lwn.net/Articles/896896/">
+      <title>Security updates for Thursday</title>
+      <link>https://lwn.net/Articles/896896/</link>
+      <dc:date>2022-06-02T13:34:49+00:00</dc:date>
+      <dc:creator>jake</dc:creator>
+      <description>
+      Security updates have been issued by &lt;b&gt;Debian&lt;/b&gt; (firefox-esr), &lt;b&gt;Fedora&lt;/b&gt; (thunderbird and vim), &lt;b&gt;Red Hat&lt;/b&gt; (firefox, postgresql:10, postgresql:12, and postgresql:13), &lt;b&gt;Scientific Linux&lt;/b&gt; (firefox and rsyslog), &lt;b&gt;SUSE&lt;/b&gt; (hdf5, hdf5, suse-hpc, postgresql14, rubygem-yajl-ruby, and udisks2), and &lt;b&gt;Ubuntu&lt;/b&gt; (imagemagick and influxdb).
+
+      
+      </description>
+    </item>
+    <item rdf:about="https://lwn.net/Articles/895776/">
+      <title>LWN.net Weekly Edition for May 26, 2022</title>
+      <link>https://lwn.net/Articles/895776/</link>
+      <dc:date>2022-06-02T00:00:00+00:00</dc:date>
+      <dc:creator>corbet</dc:creator>
+      <description>
+      The LWN.net Weekly Edition for May 26, 2022 is available.
+
+      
+      </description>
+    </item>
+    <item rdf:about="https://lwn.net/Articles/896153/">
+      <title>Making O_TMPFILE atomic (and statx() additions)</title>
+      <link>https://lwn.net/Articles/896153/</link>
+      <dc:date>2022-06-02T00:00:00+00:00</dc:date>
+      <dc:creator>jake</dc:creator>
+      <description>
+      Right on the heels of his &lt;a href=&quot;https://lwn.net/Articles/896055/&quot;&gt;previous filesystem
+session&lt;/a&gt; at the
+&lt;a
+href=&quot;https://events.linuxfoundation.org/lsfmm/&quot;&gt;2022 Linux Storage,
+Filesystem, Memory-management and BPF Summit&lt;/a&gt; (LSFMM), Steve French led
+a session on temporary files and their interaction with network
+filesystems.
+The problem is that creating temporary files is not always atomic, so he was
+proposing changing that, which would eliminate a possible race condition
+and be more efficient for network filesystems.
+Since the temporary-file discussion did not fill the 30-minute slot, however, French took
+the opportunity to discuss some attributes he would like to see get added for the
+&lt;a
+href=&quot;https://man7.org/linux/man-pages/man2/statx.2.html&quot;&gt;&lt;tt&gt;statx()&lt;/tt&gt;&lt;/a&gt;
+system call.
+
+      
+      </description>
+    </item>
+    <item rdf:about="https://lwn.net/Articles/896055/">
+      <title>Change notifications for network filesystems</title>
+      <link>https://lwn.net/Articles/896055/</link>
+      <dc:date>2022-06-02T00:00:00+00:00</dc:date>
+      <dc:creator>jake</dc:creator>
+      <description>
+      Steve French led a discussion on change notifications for network
+filesystems in a session at the
+&lt;a
+href=&quot;https://events.linuxfoundation.org/lsfmm/&quot;&gt;2022 Linux Storage,
+Filesystem, Memory-management and BPF Summit&lt;/a&gt; (LSFMM).  He is part of
+the Samba team and noted that both Windows and macOS clients get notified
+of new and changed files in 
+a shared directory immediately, while on Linux that does not happen.  He
+wanted to explore what it would take to add that functionality.
+
+      
+      </description>
+    </item>
+    <item rdf:about="https://lwn.net/Articles/895907/">
+      <title>Sharing memory for shared file extents</title>
+      <link>https://lwn.net/Articles/895907/</link>
+      <dc:date>2022-06-02T00:00:00+00:00</dc:date>
+      <dc:creator>jake</dc:creator>
+      <description>
+      On the second day of the
+&lt;a
+href=&quot;https://events.linuxfoundation.org/lsfmm/&quot;&gt;2022 Linux Storage,
+Filesystem, Memory-management and BPF Summit&lt;/a&gt; (LSFMM), Goldwyn Rodrigues
+led a 
+combined filesystem and memory-management session on saving memory when
+reading files that share extents.  That kind of sharing can occur with
+copy-on-write (COW) filesystems, reflinks, snapshots, and other features
+of that sort.  When reading those files, memory is wasted because multiple
+copies of the same data is stored in the page cache, so he wanted to
+explore adding a cache
+specifically to handle that.
+
+      
+      </description>
+    </item>
+    <item rdf:about="https://lwn.net/Articles/895587/">
+      <title>Improved error reporting for CPython 3.10—and beyond</title>
+      <link>https://lwn.net/Articles/895587/</link>
+      <dc:date>2022-06-02T00:00:00+00:00</dc:date>
+      <dc:creator>jake</dc:creator>
+      <description>
+      In a fast-paced talk at &lt;a
+href=&quot;https://us.pycon.org/2022/&quot;&gt;PyCon&amp;nbsp;2022&lt;/a&gt; in Salt Lake City,
+Utah, Pablo Galindo Salgado described some changes he and others have made
+to the error reporting for CPython&amp;nbsp;3.10.  He painted a picture of a
+rather baffling set of syntax errors reported by earlier interpreter
+versions and how they have improved.  This work is not done by any means,
+he said, and encouraged attendees to get involved in making error reporting
+even better in future Python versions.
+
+      
+      </description>
+    </item>
+    <item rdf:about="https://lwn.net/Articles/895800/">
+      <title>Statistics from the 5.18 development cycle</title>
+      <link>https://lwn.net/Articles/895800/</link>
+      <dc:date>2022-06-02T00:00:00+00:00</dc:date>
+      <dc:creator>corbet</dc:creator>
+      <description>
+      The 5.18 kernel was &lt;a
+href=&quot;https://lwn.net/ml/linux-kernel/CAHk-=wjiqyoH6qntYvYTjR1F2L-pHtgX9esZMRS13iktCOJ1zA@mail.gmail.com/&quot;&gt;released&lt;/a&gt;
+on May&amp;nbsp;22 after a nine-week development cycle.  That can only mean
+that the time has come to look at some of the statistics behind this
+release, which was one of the busiest in a while.  Read on for a look at
+the 5.18 kernel, where the code in this release came from, and how it found
+its way into the mainline.
+
+      
+      </description>
+    </item>
+    <item rdf:about="https://lwn.net/Articles/895453/">
+      <title>Preserving guest memory across kexec</title>
+      <link>https://lwn.net/Articles/895453/</link>
+      <dc:date>2022-06-02T00:00:00+00:00</dc:date>
+      <dc:creator>corbet</dc:creator>
+      <description>
+      The final session in the memory-management track at the &lt;a
+href=&quot;https://events.linuxfoundation.org/lsfmm/&quot;&gt;2022 Linux Storage,
+Filesystem, Memory-management and BPF Summit&lt;/a&gt; (LSFMM) was run remotely
+by James Gowans and David Woodhouse.  It was titled &quot;user-space control of
+memory mappings&quot;, with a subtitle of &quot;letting guest memory and state
+survive kexec&quot;.  Some options were discussed, but the real work is clearly
+yet to be done.
+
+      
+      </description>
+    </item>
+    <item rdf:about="https://lwn.net/Articles/895540/">
+      <title>Fixing a race in hugetlbfs</title>
+      <link>https://lwn.net/Articles/895540/</link>
+      <dc:date>2022-06-02T00:00:00+00:00</dc:date>
+      <dc:creator>corbet</dc:creator>
+      <description>
+      As the memory-management track at the &lt;a
+href=&quot;https://events.linuxfoundation.org/lsfmm/&quot;&gt;2022 Linux Storage,
+Filesystem, Memory-management and BPF Summit&lt;/a&gt; (LSFMM) neared its
+conclusion,  Mike Kravetz ran a session remotely to talk about page
+sharing with hugetlbfs, which is a special filesystem that provides access
+to huge pages.  (See &lt;a href=&quot;https://lwn.net/Articles/374424/&quot;&gt;this article series&lt;/a&gt;
+for lots of information about hugetlbfs).  Hugetlbfs can help to reduce
+page-table overhead when pages are shared between large numbers of
+processes, but there is a problem that he is trying to find a solution for.
+
+      
+      </description>
+    </item>
+    <item rdf:about="https://lwn.net/Articles/895439/">
+      <title>get_user_pages() and COW, 2022 edition</title>
+      <link>https://lwn.net/Articles/895439/</link>
+      <dc:date>2022-06-02T00:00:00+00:00</dc:date>
+      <dc:creator>corbet</dc:creator>
+      <description>
+      The numerous &lt;a
+href=&quot;https://lwn.net/Kernel/Index/#Memory_management-get_user_pages&quot;&gt;correctness problems
+with the kernel's 
+&lt;tt&gt;get_user_pages()&lt;/tt&gt; functionality&lt;/a&gt; have been a fixture at the Linux
+Storage, Filesystem, Memory-management and BPF Summit (LSFMM) for some
+years.  The &lt;a
+href=&quot;https://events.linuxfoundation.org/lsfmm/&quot;&gt;2022 event&lt;/a&gt;
+did not break that tradition.  The first-day discussion on page pinning 
+was &lt;a href=&quot;https://lwn.net/Articles/894390/&quot;&gt;covered here&lt;/a&gt;.
+On the final day, in the memory-management
+track, David Hildenbrand led a session on the current status of
+&lt;tt&gt;get_user_pages()&lt;/tt&gt; and its interaction with copy-on-write (COW)
+memory.
+
+      
+      </description>
+    </item>
+    <item rdf:about="https://lwn.net/Articles/895431/">
+      <title>Cleaning up dying control groups, 2022 edition</title>
+      <link>https://lwn.net/Articles/895431/</link>
+      <dc:date>2022-06-02T00:00:00+00:00</dc:date>
+      <dc:creator>corbet</dc:creator>
+      <description>
+      Control groups are a useful system-management feature, but they can also
+consume a lot of resources, especially if they hang around on the system
+after they have been deleted.  Roman Gushchin &lt;a
+href=&quot;https://lwn.net/Articles/787614/&quot;&gt;described the problems that can result&lt;/a&gt; at the
+2019 Linux Storage, Filesystem, Memory-management and BPF Summit (LSFMM);
+he returned during the &lt;a
+href=&quot;https://events.linuxfoundation.org/lsfmm/&quot;&gt;2022 LSFMM&lt;/a&gt; to revisit
+the issue, especially as it relates to the memory controller.  Progress has
+been made, but the problem is not yet solved.
+
+      
+      </description>
+    </item>
+    <item rdf:about="https://lwn.net/Articles/894626/">
+      <title>CXL 2: Pooling, sharing, and I/O-memory resources</title>
+      <link>https://lwn.net/Articles/894626/</link>
+      <dc:date>2022-06-02T00:00:00+00:00</dc:date>
+      <dc:creator>corbet</dc:creator>
+      <description>
+      During the final day of the &lt;a
+href=&quot;https://events.linuxfoundation.org/lsfmm/&quot;&gt;2022 Linux Storage,
+Filesystem, Memory-management and BPF Summit&lt;/a&gt; (LSFMM), attention in the
+memory-management track turned once again to the challenges posed by the
+upcoming Compute Express Link (CXL) technology.  Two sessions looked at
+different problems posed by CXL memory, which can come and go over the
+operation of the system.  CXL offers a lot of flexibility, but changes will
+be needed for the kernel to be able to take advantage of it.
+
+      
+      </description>
+    </item>
+    <item rdf:about="https://lwn.net/Articles/896804/">
+      <title>Fedora and Ubuntu EOL announcements</title>
+      <link>https://lwn.net/Articles/896804/</link>
+      <dc:date>2022-06-01T13:47:43+00:00</dc:date>
+      <dc:creator>corbet</dc:creator>
+      <description>
+      If you are running Fedora 34, the time has come to move on; that
+distribution &lt;a href=&quot;https://lwn.net/Articles/896806/&quot;&gt;will reach the end of its support
+life&lt;/a&gt; on June&amp;nbsp;7.  Users of Ubuntu 21.10 have a little longer, but
+that release &lt;a href=&quot;https://lwn.net/Articles/896805/&quot;&gt;loses support on July 14&lt;/a&gt; and
+users should update to 22.04.
+      
+      </description>
+    </item>
+    <item rdf:about="https://lwn.net/Articles/896803/">
+      <title>Security updates for Wednesday</title>
+      <link>https://lwn.net/Articles/896803/</link>
+      <dc:date>2022-06-01T13:43:24+00:00</dc:date>
+      <dc:creator>corbet</dc:creator>
+      <description>
+      Security updates have been issued by &lt;b&gt;Debian&lt;/b&gt; (libjpeg-turbo, webkit2gtk, and wpewebkit), &lt;b&gt;Fedora&lt;/b&gt; (golang-github-opencontainers-runc, mingw-pcre2, python-jwt, python-ujson, and weechat), &lt;b&gt;Oracle&lt;/b&gt; (nodejs:16 and rsyslog), &lt;b&gt;Red Hat&lt;/b&gt; (container-tools:3.0, expat, fapolicyd, kernel, kernel-rt, kpatch-patch, mariadb:10.3, postgresql:12, rsyslog and rsyslog7, and zlib), &lt;b&gt;Slackware&lt;/b&gt; (mozilla), &lt;b&gt;SUSE&lt;/b&gt; (bind, dpdk, fribidi, hdf5, librelp, php74, postgresql12, and postgresql13), and &lt;b&gt;Ubuntu&lt;/b&gt; (cups, linux-gcp-5.13, linux-oracle, linux-oracle-5.13, linux-gcp-5.4, linux-gkeop, linux-gkeop-5.4, linux-ibm-5.4, linux-oracle, linux-oracle-5.4, linux-raspi, linux-raspi-5.4, and webkit2gtk).
+
+      
+      </description>
+    </item>
+    <item rdf:about="https://lwn.net/Articles/896721/">
+      <title>Security updates for Tuesday</title>
+      <link>https://lwn.net/Articles/896721/</link>
+      <dc:date>2022-05-31T13:26:26+00:00</dc:date>
+      <dc:creator>corbet</dc:creator>
+      <description>
+      Security updates have been issued by &lt;b&gt;Debian&lt;/b&gt; (haproxy, libdbi-perl, pjproject, spip, and trafficserver), &lt;b&gt;Oracle&lt;/b&gt; (firefox, kernel, kernel-container, libvirt libvirt-python, and thunderbird), &lt;b&gt;Red Hat&lt;/b&gt; (maven:3.5, maven:3.6, nodejs:16, postgresql, postgresql:10, and rsyslog), &lt;b&gt;SUSE&lt;/b&gt; (gimp, helm-mirror, ImageMagick, mailman, openstack-neutron, pcmanfm, pcre2, postgresql10, and tiff), and &lt;b&gt;Ubuntu&lt;/b&gt; (dpkg and freetype).
+
+      
+      </description>
+    </item>
+    <item rdf:about="https://lwn.net/Articles/896643/">
+      <title>Four stable kernel releases</title>
+      <link>https://lwn.net/Articles/896643/</link>
+      <dc:date>2022-05-30T13:53:56+00:00</dc:date>
+      <dc:creator>jake</dc:creator>
+      <description>
+      The &lt;a href=&quot;https://lwn.net/Articles/896645/&quot;&gt;5.18.1&lt;/a&gt;, &lt;a
+href=&quot;https://lwn.net/Articles/896646/&quot;&gt;5.17.12&lt;/a&gt;, &lt;a
+href=&quot;https://lwn.net/Articles/896647/&quot;&gt;5.15.44&lt;/a&gt;, and &lt;a
+href=&quot;https://lwn.net/Articles/896648/&quot;&gt;5.10.119&lt;/a&gt; stable kernels have been released.
+As usual, they contain important fixes; users of those series should upgrade.
+      
+      </description>
+    </item>
+    <item rdf:about="https://lwn.net/Articles/896644/">
+      <title>Perl 5.36.0 released</title>
+      <link>https://lwn.net/Articles/896644/</link>
+      <dc:date>2022-05-30T13:48:15+00:00</dc:date>
+      <dc:creator>corbet</dc:creator>
+      <description>
+      Version 5.36.0 of the Perl language is out.  &quot;&lt;span&gt;Perl 5.36.0 represents
+approximately a year of development since Perl 5.34.0 and contains
+approximately 250,000 lines of changes across 2,000 files from 82
+authors.&lt;/span&gt;&quot;  Changes include the enabling of function signatures,
+Unicode 14.0 support, experimental iteration over multiple values, and a
+lot more; see &lt;a
+href=&quot;https://metacpan.org/release/RJBS/perl-5.36.0/view/pod/perldelta.pod&quot;&gt;the
+release notes&lt;/a&gt; for the full list.
+
+      
+      </description>
+    </item>
+    <item rdf:about="https://lwn.net/Articles/896640/">
+      <title>Security updates for Monday</title>
+      <link>https://lwn.net/Articles/896640/</link>
+      <dc:date>2022-05-30T13:41:12+00:00</dc:date>
+      <dc:creator>jake</dc:creator>
+      <description>
+      Security updates have been issued by &lt;b&gt;Debian&lt;/b&gt; (modsecurity-apache, pngcheck, rsyslog, and smarty3), &lt;b&gt;Fedora&lt;/b&gt; (firefox, golang-github-opencontainers-runc, gron, kernel, kernel-headers, kernel-tools, logrotate, mingw-pcre2, and rubygem-git), &lt;b&gt;Mageia&lt;/b&gt; (admesh, chromium-browser-stable, golang, kernel, kernel-linus, and pidgin), &lt;b&gt;Red Hat&lt;/b&gt; (firefox, openvswitch2.13, openvswitch2.15, openvswitch2.16, rsyslog, and thunderbird), &lt;b&gt;SUSE&lt;/b&gt; (bind, curl, opera, pcp, postgresql12, and postgresql14), and &lt;b&gt;Ubuntu&lt;/b&gt; (gnupg2 and ntfs-3g).
+
+      
+      </description>
+    </item>
+    <item rdf:about="https://lwn.net/Articles/896511/">
+      <title>McKenney: Stupid RCU Tricks: Is RCU Watching?</title>
+      <link>https://lwn.net/Articles/896511/</link>
+      <dc:date>2022-05-27T21:36:45+00:00</dc:date>
+      <dc:creator>corbet</dc:creator>
+      <description>
+      Paul McKenney &lt;a href=&quot;https://paulmck.livejournal.com/67073.html&quot;&gt;writes
+about why read-copy-update coverage is not universal&lt;/a&gt; in the kernel, the
+hazards that can result from that, and what is being done to improve the
+situation.
+&lt;p&gt;
+&lt;blockquote class=&quot;bq&quot;&gt;
+	Unfortunately, an eternally watchful RCU is impractical in the
+	Linux kernel due to energy-efficiency considerations. The problem
+	is that if RCU watches an idle CPU, RCU needs that CPU to execute
+	instructions. And making an idle CPU unnecessarily execute
+	instructions (for a rather broad definition of the word
+	“unnecessary”) will terminally annoy a great many people in the
+	battery-powered embedded world. And for good reason: Making RCU
+	avoid watching idle CPUs can provide 30-40% increases in battery
+	lifetime.
+&lt;/blockquote&gt;
+      
+      </description>
+    </item>
+</rdf:RDF>
